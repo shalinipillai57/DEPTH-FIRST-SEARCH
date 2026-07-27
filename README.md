@@ -104,6 +104,8 @@ G F <BR>
 ['0', '1', '2', '3', '4']
 <hr>
 <h3>Result:</h3>
+<img width="548" height="213" alt="image" src="https://github.com/user-attachments/assets/d6358170-024c-46ec-b4d8-269d55b31d16" />
+
 <hr>
 <p>Thus,a Graph was constructed and implementation of Breadth First Search for the same graph was done successfully.</p>
 
