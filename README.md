@@ -99,11 +99,50 @@ G F <BR>
 2 4 <BR>
 3 4 <BR>
 <hr>
-<h3>Sample Output</h3>
+<h4>Sample Output</h4>
 <hr>
 ['0', '1', '2', '3', '4']
 <hr>
-<h3>Result:</h3>
+<h5>PROGRAM</h5>
+from collections import deque
+from collections import defaultdict
+
+def bfs(graph, start, visited, path):
+    queue = deque()
+    path.append(start)
+    queue.append(start)
+    visited[start] = True
+
+    while len(queue) != 0:
+        tmpnode = queue.popleft()
+
+        # TYPE YOUR CODE HERE
+        for neighbour in graph[tmpnode]:
+            if not visited[neighbour]:
+                visited[neighbour] = True
+                path.append(neighbour)
+                queue.append(neighbour)
+
+    return path
+
+
+graph = defaultdict(list)
+
+v, e = map(int, input().split())
+
+for i in range(e):
+    # TYPE YOUR CODE HERE
+    u, v = input().split()
+    graph[u].append(v)
+    graph[v].append(u)   # Remove this line if the graph is directed
+
+start = 'A'   # Starting vertex
+path = []
+visited = defaultdict(bool)
+
+traversedpath = bfs(graph, start, visited, path)
+print(traversedpath)
+<h6>Result:</h6>
 <img width="548" height="213" alt="image" src="https://github.com/user-attachments/assets/d6358170-024c-46ec-b4d8-269d55b31d16" />
 
 <hr>
